@@ -1,0 +1,92 @@
+@use "../../../../shared/styles/variables/typography";
+
+.container {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	
+	background-color: rgba(88, 88, 88, 0.4);
+	z-index: 1999;
+}
+
+.panel {
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	width: 435px;
+
+	background-color: var(--color-typo-2);
+
+	&_close {
+		position: absolute;
+		top: 35px;
+		right: 35px;
+
+		cursor: pointer;
+	}
+
+	&_content {
+		padding: 83px 30px 35px;
+
+	}
+
+	&_title{
+		margin-bottom: 30px;
+	}
+
+	&_subtitle {
+		@include typography.font-body-2;
+	}
+	
+	&_color {
+		display: flex;
+		align-items: center;
+		column-gap: 20px;
+
+		margin-bottom: 30px;
+	}
+
+	&_color_options {
+		display: flex;
+		align-items: center;
+		column-gap: 12px;
+	}
+
+	&_price{
+		margin-bottom: 20px;
+	}
+
+	&_type {
+		margin-bottom: 20px;
+	}
+
+	&_category {
+		margin-bottom: 60px;
+	}
+
+	&_type, &_category {
+		display: flex;
+		flex-direction: column;
+		row-gap: 20px
+	}
+
+	&_two_col_options {
+		@include typography.font-body-3;
+
+		display: grid;
+		grid-template-columns: min-content min-content;
+		row-gap: 10px;
+		column-gap: 25px
+	}
+
+	&_col_options {
+		@include typography.font-body-3;
+
+		display: flex;
+		flex-direction: column;
+		row-gap: 10px;
+	}
+}

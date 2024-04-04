@@ -1,0 +1,20 @@
+.MainPage {
+	&_container {
+		min-width: 1200px;
+		max-width: 1440px;
+		width: 100vw;
+		height: 100vh;
+
+		margin: 0 auto;
+	}
+
+	&_wrapper {
+		position: relative;
+
+		padding: 0 75px;
+
+		& > div {
+			margin-bottom: 100px;
+		}
+	}
+}

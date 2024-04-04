@@ -1,0 +1,50 @@
+@use "../../../../shared/styles/variables/typography";
+
+.container {
+	position: relative;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+
+	min-height: 710px;
+
+	padding-bottom: 40px;
+}
+
+.about {
+	display: flex;
+	align-items: flex-end;
+	gap: 30px;
+}
+
+.description {
+	display: flex;
+	flex-direction: column;
+
+	max-width: 710px;
+
+	z-index: 99;
+
+	& > h1 {
+		margin-bottom: 26px;
+	}
+
+	& > p {
+		@include typography.font-body-2;
+		margin-bottom: 70px;
+		max-width: 330px;
+	}
+}
+
+.pottery_image {
+	object-fit: contain;
+}
+
+.main_image {
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	height: 710px;
+}

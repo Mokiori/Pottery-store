@@ -1,0 +1,15 @@
+@mixin container-flex {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	width: 100%;
+}
+
+@mixin catalog($frame-count) {
+	width: 100%;
+
+	display: grid;
+	grid-template-columns: repeat($frame-count, 1fr);
+	column-gap: 30px;
+}

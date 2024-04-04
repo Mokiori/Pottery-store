@@ -1,0 +1,80 @@
+@use "../../styles/variables/typography";
+
+.container {
+	position: absolute;
+
+	width: 100%;
+	min-width: 1200px;
+	max-width: 1440px;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	column-gap: 50px;
+
+	padding-top: 60px;
+	padding: 60px 75px 0;
+
+	z-index: 999;
+}
+
+.home_wrapper {
+	max-width: calc(100% - 463px);
+}
+
+.wrapper {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+}
+
+.logo {
+	@include typography.font-headline-4;
+	text-decoration: none;
+
+	&_white {
+		color: var(--color-typo-2);
+	}
+}
+
+.navigation {
+	@include typography.font-body-2;
+
+	display: flex;
+	align-items: center;
+	gap: 20px;
+
+	a {
+		@include typography.font-body-2;
+		position: relative;
+
+		cursor: pointer;
+		text-decoration: none;
+	}
+
+	a::after {
+		display: block;
+		
+		content: "";
+		position: absolute;
+		bottom: 0;
+		right: 8px;
+		
+		height: 3px;
+		width: 0;
+		
+		border-radius: 50%;
+		background-color: var(--color-accent-1);
+		transition: width 0.3s ease-out;
+	}
+
+	a:hover::after {
+		width: 100%;
+	}
+}
+
+.actions {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}

@@ -1,0 +1,111 @@
+@mixin color($color) {
+  & > span::before {
+    background-color: $color;
+    border: 1px solid $color;
+  }
+
+  & > input:not(:disabled, :checked) + span:hover::before {
+    border-color: $color;
+  }
+
+  & > input:focus + span::before {
+    border-color: $color;
+  }
+
+  & > input:focus:not(:checked) + span::before {
+    border-color: $color;
+  }
+
+  & > input:checked + span::before {
+    outline: 1px solid var(--color-accent-1);
+    border: 4px solid var(--color-typo-2);
+  }
+}
+
+.label {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+
+  & > div {
+    margin-left: .5rem;
+  }
+
+  & > input {
+    position: relative;
+    z-index: -1;
+    width: 0;
+    opacity: 0;
+  }
+
+  & > span {
+    user-select: none;
+    display: inline-flex;
+    align-items: center;
+    width: inherit;
+  }
+
+  & > span::before {
+    content: '';
+
+    display: inline-block;
+    flex-grow: 0;
+    flex-shrink: 0;
+
+    width: 20px;
+    height: 20px;
+
+    background-color: var(--color-typo-1);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+    border: 1px solid var(--color-typo-1);
+    border-radius: 100%;
+  }
+
+  & > input:not(:disabled, :checked) + span:hover::before {
+    border-color: var(--color-typo-1);
+  }
+
+  & > input:focus + span::before {
+    border-color: var(--color-typo-1);
+  }
+
+  & > input:focus:not(:checked) + span::before {
+    border-color: var(--color-typo-1);
+  }
+
+  & > input:checked + span::before {
+    outline: 2px solid #55684a;
+    border: 3px solid #fff;
+  }
+
+  &_1 {
+    @include color(var(--color-1))
+  }
+
+  &_2 {
+    @include color(var(--color-2))
+  }
+
+  &_3 {
+    @include color(var(--color-3))
+  }
+
+  &_4 {
+    @include color(var(--color-4))
+  }
+
+  &_5 {
+    @include color(var(--color-5))
+  }
+
+  &_6 {
+    @include color(var(--color-6))
+  }
+
+  &_7 {
+    @include color(var(--color-7))
+  }
+}

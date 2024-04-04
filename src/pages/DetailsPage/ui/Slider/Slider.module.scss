@@ -1,0 +1,36 @@
+.container {
+	position: relative;
+}
+
+.slider {
+	&_image {
+		display: block;
+		object-fit: contain;
+    width: 100%;
+	}
+
+	&_nav {
+		position: absolute;
+		top: calc(50% - 40px);
+		left: 50px;
+
+		display: flex;
+		flex-direction: column;
+		row-gap: 10px;
+	}
+
+	&_dot {
+		display: block;
+
+		height: 8px;
+		width: 8px;
+
+		border-radius: 50%;
+		background-color: rgba(241, 242, 243, 0.6);
+		cursor: pointer;
+	}
+
+	&_dot_selected {
+		background-color: var(--color-bg-default);
+	}
+}

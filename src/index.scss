@@ -1,0 +1,118 @@
+@use "src/shared/styles/variables/typography";
+
+@font-face {
+  font-family: LibreBaskerville;
+  font-weight: 700;
+  src: url("./fonts/LibreBaskerville-Bold.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: LibreBaskerville;
+  font-weight: 400;
+  src: url("./fonts/LibreBaskerville-Regular.ttf") format('truetype')
+}
+
+@font-face {
+  font-family: Inter;
+  font-weight: 400;
+  src: url("./fonts/Inter-Regular.ttf") format('truetype')
+}
+
+:root {
+  --color-accent-1: #55684A; // Accent Color 1
+  --color-accent-2: #D76C32; // Accent Color 2
+
+  --color-typo-1: #363636; // Pressed
+  --color-typo-2: #F1F2F3; // Pressed
+
+  --color-bg-default: #ffffff;
+
+  --color-black-1: #363636;
+  --color-black-2: #1A1718;
+
+  // * Colors filter
+  --color-1: #C3B09F;
+  --color-2: #0C0802;
+  --color-3: #9C9780;
+  --color-4: #E5E3DF;
+  --color-5: #554E3E;
+  --color-6: #683120;
+  --color-7: #FFFFFF;
+
+
+  // * Shadows
+  --shadow-default: 0px 0px 8px 0px rgb(121 133 164 / 10%), 0px 0px 2px 0px rgb(121 133 164 / 40%);
+
+	// * Status
+  --border-focus: #E8B733;
+
+	// * z-index
+  --z-index-input: 100;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: LibreBaskerville, Inter, sans-serif;
+  font-size: 16px;
+  background-color: var(--color-bg-default);
+}
+
+body {
+  @include typography.font-body-1;
+
+  overflow-x: hidden;
+  width: 100vw;}
+
+::-webkit-scrollbar {
+  width: .5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent-1);
+  border-radius: .75rem;
+}
+
+h1 {
+  @include typography.font-headline-1;
+}
+
+h2 {
+  @include typography.font-headline-2;
+}
+
+h3 {
+  @include typography.font-headline-3;
+}
+
+h4 {
+  @include typography.font-headline-4;
+}
+
+strong {
+  font-weight: 800;
+}
+
+p {
+  overflow-wrap: anywhere;
+}
+
+// ! Clear button styles
+button {
+  cursor: pointer;
+
+  padding: 0;
+
+  font: inherit;
+  color: inherit;
+
+  background: none;
+  border: none;
+  outline: inherit;
+}

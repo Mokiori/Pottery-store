@@ -1,0 +1,20 @@
+.CatalogPage {
+	&_container {
+		position: relative;
+
+		min-width: 1200px;
+		max-width: 1440px;
+		width: 100vw;
+		height: 100vh;
+
+		margin: 0 auto;
+	}
+
+	&_wrapper {
+		padding: 190px 75px 0;
+		
+		& > div:first-child {
+			margin-bottom: 100px;
+		}
+	}
+}

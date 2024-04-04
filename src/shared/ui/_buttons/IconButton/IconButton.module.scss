@@ -1,0 +1,11 @@
+button {
+	& > svg {
+		fill: none;
+		stroke: var(--color-typo-1);
+	}
+
+	& > svg:hover {
+		fill: var(--color-typo-2);
+		stroke: var(--color-typo-1);
+	}
+}

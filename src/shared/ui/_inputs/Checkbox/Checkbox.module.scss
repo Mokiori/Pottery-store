@@ -1,0 +1,22 @@
+@use "../../../styles/variables/typography";
+
+.container {
+	@include typography.font-body-3;
+	cursor: pointer;
+
+  display: flex;
+  align-items: center;
+	gap: 10px;
+  width: fit-content;
+
+	& > input {
+    position: relative;
+    z-index: -1;
+    width: 0;
+    opacity: 0;
+  }
+}
+
+.check_mark {
+	stroke: var(--color-accent-2);
+}

@@ -1,0 +1,23 @@
+@use "../../../styles/variables/typography";
+
+.container {
+	display: flex;
+	align-items: center;
+	column-gap: 4px;
+
+	cursor: pointer;
+
+	&_primary {
+		& > button {
+			@include  typography.font-body-1; //todo: другой шрифт
+			border-bottom: 1px solid var(--color-black-1);
+		}
+	}
+
+	&_secondary {
+		& > button {
+			@include  typography.font-body-1;
+			border-bottom: 1px solid var(--color-black-1);
+		}
+	}
+}

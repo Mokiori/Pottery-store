@@ -1,0 +1,31 @@
+@use "../../styles/layout/layout";
+@use "../../styles/variables/typography";
+
+.Card {
+	&_container {
+		@include layout.container-flex;
+		@include typography.font-body-2;
+
+		position: relative;
+	
+		text-align: center;
+	
+		& > span:first-of-type {
+			margin-bottom: 5px;
+
+			cursor: pointer;
+		}
+	}
+
+	&_image {
+		width: 100%;
+		margin-bottom: 15px;
+
+		cursor: pointer;
+	}
+
+	&_image_fixed {
+		width: auto;
+		max-height: 850px;
+	}
+}
