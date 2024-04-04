@@ -1,0 +1,51 @@
+.container {
+	position: fixed;
+	z-index: 1999;
+	inset: 0;
+
+	background-color: rgb(88 88 88 / 40%);
+
+	animation: overlay .5s ease-in-out none;
+}
+
+.panel {
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	overflow: auto;
+
+	height: 100%;
+	padding: 80px 40px 30px;
+
+	background-color: var(--color-typo-2);
+
+	animation: panel .5s ease-in-out none;
+
+	&_close {
+		cursor: pointer;
+		position: absolute;
+		top: 35px;
+		right: 35px;
+	}
+}
+
+@keyframes panel {
+	from {
+		right: -50%;
+	}
+
+	to {
+		right: 0;
+	}
+}
+
+@keyframes overlay {
+	from {
+		background-color: transparent;
+	}
+
+	to {
+		background-color: rgb(88 88 88 / 40%);
+	}
+}

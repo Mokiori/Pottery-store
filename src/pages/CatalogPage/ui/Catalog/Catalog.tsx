@@ -17,19 +17,19 @@ const catalog = [
 		count: 3,
 		items: [
 			{
-				id: 'jug-1',
+				id: 'jug-1-330-400',
 				image: jug1,
 				name: 'Handmade jug',
 				price: 35,
 			},
 			{
-				id: 'jug-2',
+				id: 'jug-2-330-400',
 				image: jug2,
 				name: 'Handmade jug',
 				price: 35,
 			},
 			{
-				id: 'jug-3',
+				id: 'jug-3-330-400',
 				image: jug3,
 				name: 'Handmade jug',
 				price: 35,
@@ -53,13 +53,13 @@ const catalog = [
 		count: 2,
 		items: [
 			{
-				id: 'jug-3',
+				id: 'jug-3-510-350',
 				image: jugTwo3,
 				name: 'Handmade jug',
 				price: 35,
 			},
 			{
-				id: 'jug-4',
+				id: 'jug-4-510-350',
 				image: jugTwo4,
 				name: 'Handmade jug',
 				price: 35,
@@ -71,19 +71,19 @@ const catalog = [
 		count: 3,
 		items: [
 			{
-				id: 'jug-4',
+				id: 'jug-4-330-400',
 				image: jug4,
 				name: 'Handmade jug',
 				price: 35,
 			},
 			{
-				id: 'jug-5',
+				id: 'jug-5-330-400',
 				image: jug5,
 				name: 'Handmade jug',
 				price: 35,
 			},
 			{
-				id: 'plate-1',
+				id: 'plate-1-330-400',
 				image: plate1,
 				name: 'Handmade plate',
 				price: 35,

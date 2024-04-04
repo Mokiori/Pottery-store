@@ -1,5 +1,4 @@
 import { ChangeEvent, FC, useState } from 'react';
-import { ReactComponent as CloseSVG } from 'src/shared/assets/svg/action/close.svg';
 import { Button } from 'src/shared/ui/_buttons/Button/Button';
 import { Checkbox } from 'src/shared/ui/_inputs/Checkbox/Checkbox';
 import { RadioColor } from 'src/shared/ui/_inputs/RadioColor/RadioColor';
@@ -52,75 +51,64 @@ export const FilterPanel: FC<Props> = props => {
 	};
 
 	return (
-		<div className={s.container}>
-			<div className={s.panel}>
-				<div
-					className={s.panel_close}
-					onClick={onClose}
-				>
-					<CloseSVG />
-				</div>
+		<div className={s.content}>
+			<h3 className={s.content_title}>Filters</h3>
 
-				<div className={s.panel_content}>
-					<h3 className={s.panel_title}>Filters</h3>
+			<div className={s.content_price}>
+				<span className={s.content_subtitle}>Price</span>
+			</div>
 
-					<div className={s.panel_price}>
-						<span className={s.panel_subtitle}>Price</span>
-					</div>
+			<div className={s.content_color}>
+				<span className={s.content_subtitle}>Colors</span>
 
-					<div className={s.panel_color}>
-						<span className={s.panel_subtitle}>Colors</span>
-
-						<div className={s.panel_color_options}>
-							{COLORS.map(color => (
-								<RadioColor
-									key={color}
-									value={+color}
-									checked={colorOptions.includes(color)}
-									onChange={e => onChangeColors(e, color)}
-								/>
-							))}
-						</div>
-					</div>
-
-					<div className={s.panel_type}>
-						<span className={s.panel_subtitle}>Type of products</span>
-
-						<div className={s.panel_two_col_options}>
-							{TYPES.map(type => (
-								<Checkbox
-									key={type}
-									label={type}
-									checked={typeOptions.includes(type)}
-									onChange={e => onChangeTypes(e, type)}
-								/>
-							))}
-						</div>
-					</div>
-
-					<div className={s.panel_category}>
-						<span className={s.panel_subtitle}>Category</span>
-
-						<div className={s.panel_col_options}>
-							{CATEGORIES.map(category => (
-								<Checkbox
-									key={category}
-									label={category}
-									checked={categoryOptions.includes(category)}
-									onChange={e => onChangeCategories(e, category)}
-								/>
-							))}
-						</div>
-					</div>
-
-					<Button
-						size="fullwidth"
-						onClick={onClose}
-					>
-						Apply
-					</Button>
+				<div className={s.content_color_options}>
+					{COLORS.map(color => (
+						<RadioColor
+							key={color}
+							value={+color}
+							checked={colorOptions.includes(color)}
+							onChange={e => onChangeColors(e, color)}
+						/>
+					))}
 				</div>
 			</div>
+
+			<div className={s.content_type}>
+				<span className={s.content_subtitle}>Type of products</span>
+
+				<div className={s.content_two_col_options}>
+					{TYPES.map(type => (
+						<Checkbox
+							key={type}
+							label={type}
+							checked={typeOptions.includes(type)}
+							onChange={e => onChangeTypes(e, type)}
+						/>
+					))}
+				</div>
+			</div>
+
+			<div className={s.content_category}>
+				<span className={s.content_subtitle}>Category</span>
+
+				<div className={s.content_col_options}>
+					{CATEGORIES.map(category => (
+						<Checkbox
+							key={category}
+							label={category}
+							checked={categoryOptions.includes(category)}
+							onChange={e => onChangeCategories(e, category)}
+						/>
+					))}
+				</div>
+			</div>
+
+			<Button
+				size="fullwidth"
+				onClick={onClose}
+			>
+				Apply
+			</Button>
 		</div>
 	);
 };

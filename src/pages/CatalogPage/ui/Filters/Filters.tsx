@@ -4,6 +4,7 @@ import { ReactComponent as ArrowDownSVG } from 'src/shared/assets/svg/action/arr
 import { ReactComponent as FilterSVG } from 'src/shared/assets/svg/action/filter.svg';
 import { useState } from 'react';
 import { FilterPanel } from '../FilterPanel/FilterPanel';
+import { Modal } from 'src/shared/ui/Modal/Modal';
 
 export const Filters = () => {
 	const [isOpenPanel, setIsOpenPanel] = useState(false);
@@ -20,7 +21,11 @@ export const Filters = () => {
 
 	return (
 		<div className={s.container}>
-			{isOpenPanel && <FilterPanel onClose={onClosePanel} />}
+			{isOpenPanel && (
+				<Modal onClose={onClosePanel}>
+					<FilterPanel onClose={onClosePanel} />
+				</Modal>
+			)}
 
 			<div className={s.sort_wrapper}>
 				<span>Sort by</span>

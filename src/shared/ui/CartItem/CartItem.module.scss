@@ -1,0 +1,40 @@
+@use "../../styles/variables/typography";
+
+.container {
+	display: flex;
+	column-gap: 30px;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.item {
+	&_image {
+		width: 150px;
+		height: 200px;
+
+		& > img {
+			width: 150px;
+			height: 200px;
+			object-fit: cover;
+		}
+	}
+
+	&_info {
+		display: flex;
+		flex-direction: column;
+		row-gap: 10px;
+
+		& > span {
+			@include typography.font-body-1;
+		}
+	}
+
+	&_remove {
+		display: flex;
+    align-items: flex-end;
+	}
+}

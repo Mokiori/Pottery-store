@@ -1,6 +1,7 @@
+@use "../../../styles/variables/typography";
+
 .container {
 	position: relative;
-
 	z-index: 999;
 
 	&_small {
@@ -27,37 +28,43 @@
 
 .btn {
 	display: flex;
+	column-gap: 10px;
 	align-items: center;
 	justify-content: space-between;
-	column-gap: 10px;
 
 	&_center {
 		justify-content: center;
 	}
 
 	&_filled {
+		@include typography.font-body-2;
+		
 		padding: 15px;
-
-		background-color: var(--color-accent-1);
 		color: var(--color-typo-2);
+		background-color: var(--color-accent-1);
 	}
 
 	&_outlined {
-		padding: 15px;
+		@include typography.font-body-2;
 
-		background-color: var(--color-bg-default);
+		padding: 15px;
 		color: var(--color-accent-1);
+		background-color: var(--color-bg-default);
 		border: 1px solid var(--color-accent-1);
 	}
 
 	&_secondary {
 		padding: 10px 20px;
-
-		background-color: var(--color-bg-default);
 		color: var(--color-typo-1);
+		background-color: var(--color-bg-default);
 		border: 1px solid var(--color-typo-1);
+	}
 
-		
+	&_counter {
+		padding: 7px 15px;
+		color: var(--color-typo-1);
+		background-color: var(--color-bg-default);
+		border: 1px solid var(--color-typo-1);
 	}
 }
 

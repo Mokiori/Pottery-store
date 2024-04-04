@@ -2,20 +2,18 @@
 
 .container {
 	position: absolute;
+	z-index: 999;
+
+	display: flex;
+	column-gap: 50px;
+	align-items: center;
+	justify-content: space-between;
 
 	width: 100%;
 	min-width: 1200px;
 	max-width: 1440px;
-
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	column-gap: 50px;
-
-	padding-top: 60px;
 	padding: 60px 75px 0;
-
-	z-index: 999;
+	padding-top: 60px;
 }
 
 .home_wrapper {
@@ -30,6 +28,8 @@
 
 .logo {
 	@include typography.font-headline-4;
+
+	cursor: pointer;
 	text-decoration: none;
 
 	&_white {
@@ -41,40 +41,42 @@
 	@include typography.font-body-2;
 
 	display: flex;
-	align-items: center;
 	gap: 20px;
+	align-items: center;
 
-	a {
+	& > span {
 		@include typography.font-body-2;
-		position: relative;
 
 		cursor: pointer;
+		position: relative;
 		text-decoration: none;
 	}
 
-	a::after {
-		display: block;
-		
+	& > span::after {
 		content: "";
+
 		position: absolute;
-		bottom: 0;
 		right: 8px;
-		
-		height: 3px;
+		bottom: 0;
+
+		display: block;
+
 		width: 0;
-		
-		border-radius: 50%;
+		height: 3px;
+
 		background-color: var(--color-accent-1);
+		border-radius: 50%;
+
 		transition: width 0.3s ease-out;
 	}
 
-	a:hover::after {
+	& > span:hover::after {
 		width: 100%;
 	}
 }
 
 .actions {
 	display: flex;
-	align-items: center;
 	gap: 20px;
+	align-items: center;
 }

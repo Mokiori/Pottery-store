@@ -9,3 +9,15 @@ button {
 		stroke: var(--color-typo-1);
 	}
 }
+
+.filled {
+	& > svg {
+		fill: rgb(218 72 72);
+		stroke: rgb(218 72 72);
+	}
+
+	& > svg:hover {
+		fill: rgb(163 35 35);
+		stroke: rgb(163 35 35);
+	}
+}

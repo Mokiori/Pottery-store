@@ -1,25 +1,62 @@
-import { Button } from 'src/shared/ui/_buttons/Button/Button';
-import s from './Description.module.scss';
-import { IconButton } from 'src/shared/ui/_buttons/IconButton/IconButton';
-import { ReactComponent as FavoriteSVG } from 'src/shared/assets/svg/navigation/favorite.svg';
-import { useState } from 'react';
 import cn from 'classnames';
+import { useState } from 'react';
+import { useParams } from 'react-router-dom';
+import { MAIN_CATALOG } from 'src/app/redux/catalog';
+import { ReactComponent as FavoriteSVG } from 'src/shared/assets/svg/navigation/favorite.svg';
+import { Button } from 'src/shared/ui/_buttons/Button/Button';
+import { IconButton } from 'src/shared/ui/_buttons/IconButton/IconButton';
+import s from './Description.module.scss';
+import { useDispatch, useSelector } from 'react-redux';
+import { actionsFavorite } from 'src/app/redux/slices/favorite/slice';
+import { RootState } from 'src/app/redux/store';
 
 export const Description = () => {
 	const [tabId, setTabId] = useState(0);
 
+	const { id: itemId } = useParams();
+
+	// - Redux
+	const dispatch = useDispatch();
+	const { addProduct, removeProduct } = actionsFavorite;
+
+	const { products } = useSelector((state: RootState) => state.favorite);
+
+	// - Входит ли товар в понравившееся
+	const isFavorite = !!products.find(item => item.id === itemId);
+
+	// - Поиск информации о товаре
+	const itemInfo = MAIN_CATALOG.find(item => item.id === itemId);
+
+	const {
+		name = 'Товар не добавлен в каталог', //
+		price = 75,
+	} = itemInfo || {};
+
+	// - Понравившееся
+	const onChangeFavorite = (isFavorite: boolean) => {
+		if (isFavorite) {
+			dispatch(removeProduct(itemId));
+		} else {
+			dispatch(addProduct(itemInfo));
+		}
+	};
+
 	return (
 		<div className={s.container}>
 			<div className={s.header}>
-				<h3>Handmade vase</h3>
+				<h3>{name}</h3>
 
-				<span>75$</span>
+				<span>{price}$</span>
 			</div>
 
 			<div className={s.actions}>
 				<Button size="fullwidth">Add to card</Button>
 
-				<IconButton Icon={<FavoriteSVG />} />
+				<IconButton
+					filled={isFavorite}
+					Icon={<FavoriteSVG />}
+					onClick={() => onChangeFavorite(isFavorite)}
+				/>
 			</div>
 
 			<div className={s.tabs}>

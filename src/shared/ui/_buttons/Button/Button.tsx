@@ -2,7 +2,7 @@ import React, { ButtonHTMLAttributes, DetailedHTMLProps, ReactNode } from 'react
 import s from './Button.module.scss';
 import cn from 'classnames';
 
-export type ButtonVariant = 'filled' | 'outlined' | 'secondary';
+export type ButtonVariant = 'filled' | 'outlined' | 'secondary' | 'counter';
 export type ButtonSize = 'small' | 'medium' | 'large' | 'fullwidth';
 
 type Props = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement> & {
