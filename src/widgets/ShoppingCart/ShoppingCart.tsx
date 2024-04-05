@@ -5,9 +5,10 @@ import { FC, useState } from 'react';
 import cn from 'classnames';
 import vase1 from 'src/shared/assets/img/large/vase-1.jpg';
 import jug2 from 'src/shared/assets/img/510-350/jug-2.jpg';
+import { useNavigate } from 'react-router-dom';
 
 interface Props {
-	onClose: () => void;
+	onClose?: () => void;
 }
 
 const cartItems = [
@@ -29,6 +30,8 @@ const cartItems = [
 
 export const ShoppingCart: FC<Props> = props => {
 	const { onClose } = props;
+
+	const navigate = useNavigate();
 
 	const total = cartItems.map(item => item.price).reduce((acc, num) => acc + num, 0);
 
@@ -66,7 +69,15 @@ export const ShoppingCart: FC<Props> = props => {
 			</div>
 
 			<div className={s.buttons}>
-				<Button size="fullwidth">Checkout</Button>
+				<Button
+					size="fullwidth"
+					onClick={() => {
+						onClose && onClose();
+						navigate('/payment');
+					}}
+				>
+					Checkout
+				</Button>
 				<Button
 					variant="outlined"
 					size="fullwidth"

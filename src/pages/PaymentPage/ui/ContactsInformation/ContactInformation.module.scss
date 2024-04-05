@@ -1,0 +1,43 @@
+@use "../../../../shared/styles/variables/typography";
+
+.form {
+	width: 100%;
+
+	&_title {
+		margin-bottom: 50px;
+	}
+
+	&_wrapper {
+		margin-bottom: 70px;
+
+		& > input:not(:last-of-type) {
+			margin-bottom: 40px;
+		}
+	}
+
+	&_inputs_wrapper {
+		& > div:not(:last-of-type) {
+			margin-bottom: 40px;
+		}
+	}
+
+	&_agreement {
+		margin-bottom: 30px;
+
+		& > div:not(:last-of-type) {
+			margin-bottom: 10px;
+		}
+	}
+
+	&_info {
+		@include typography.font-body-3;
+
+		margin-bottom: 80px;
+		color: rgb(54 54 54 / 50%);
+
+		& > span {
+			color: var(--color-typo-1);
+			text-decoration: underline;
+		}
+	}
+}

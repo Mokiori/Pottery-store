@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { CatalogPage } from 'src/pages/CatalogPage';
 import { DetailsPage } from 'src/pages/DetailsPage';
 import { MainPage } from 'src/pages/MainPage';
+import { PaymentPage } from 'src/pages/PaymentPage';
 
 export const AppRouter = () => {
 	return (
@@ -20,6 +21,11 @@ export const AppRouter = () => {
 				<Route
 					path="/details/:id"
 					element={<DetailsPage />}
+				/>
+
+				<Route
+					path="/payment"
+					element={<PaymentPage />}
 				/>
 
 				<Route

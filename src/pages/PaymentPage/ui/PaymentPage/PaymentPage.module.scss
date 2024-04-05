@@ -1,8 +1,6 @@
-.DetailsPage {
+.PaymentPage {
 	&_container {
 		position: relative;
-
-		overflow: hidden;
 
 		width: 100vw;
 		min-width: 1200px;
@@ -13,10 +11,8 @@
 
 	&_wrapper {
 		display: flex;
-		height: 100%;
-
-		& > div {
-			flex-basis: 50%;
-		}
+		column-gap: 90px;
+		margin-bottom: 100px;
+		padding: 190px 75px 0;
 	}
 }

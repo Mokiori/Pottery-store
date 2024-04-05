@@ -1,12 +1,14 @@
 import { FC, InputHTMLAttributes } from 'react';
 import s from './Checkbox.module.scss';
+import cn from 'classnames';
 
 interface Props extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type' | 'children'> {
 	label?: string;
+	variant?: 'primary' | 'secondary';
 }
 
 export const Checkbox: FC<Props> = props => {
-	const { label, checked, ...rest } = props;
+	const { label, checked, variant = 'primary', ...rest } = props;
 
 	return (
 		<label className={s.container}>
@@ -25,6 +27,7 @@ export const Checkbox: FC<Props> = props => {
 				xmlns="http://www.w3.org/2000/svg"
 			>
 				<rect
+					className={cn(s.rect, s[`rect_${variant}`])}
 					width="14"
 					height="14"
 					fill="white"
